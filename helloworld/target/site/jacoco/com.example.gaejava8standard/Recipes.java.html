@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Recipes.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">helloworld_java8_GAE_standard</a> &gt; <a href="index.source.html" class="el_package">com.example.gaejava8standard</a> &gt; <span class="el_source">Recipes.java</span></div><h1>Recipes.java</h1><pre class="source lang-java linenums">package com.example.gaejava8standard;
+
+import com.google.cloud.datastore.Key;
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author Miller
+ */
+public class Recipes {
+    
+    private String title;
+    private String[] ingredientsBiscuit;
+    private String[] ingredientsFrosting;
+    private String[] ingredientsExtra;
+    private String[] instructionsBiscuit;
+    private String[] instructionsFrosting;
+    private String[] instructionsExtra;
+    private long id;
+    private Long key;
+    private String urlImage;
+    private double ranking;
+    private double ranking_count;
+
+<span class="nc" id="L30">    public Recipes() {</span>
+<span class="nc" id="L31">    }</span>
+    
+    
+    
+
+    public void setRanking(double ranking) {
+<span class="nc" id="L37">		this.ranking = ranking;</span>
+<span class="nc" id="L38">	}</span>
+    
+    
+
+	public Long getKey() {
+<span class="nc" id="L43">		return key;</span>
+	}
+
+
+
+
+	public void setKey(Long key) {
+<span class="nc" id="L50">		this.key = key;</span>
+<span class="nc" id="L51">	}</span>
+
+
+
+
+<span class="nc" id="L56">	public Recipes(String title, String[] ingredientsBiscuit, String[] ingredientsFrosting, String[] instructionsBiscuit, String[] instructionsFrosting, int id) {</span>
+<span class="nc" id="L57">        this.title = title;</span>
+<span class="nc" id="L58">        this.ingredientsBiscuit = ingredientsBiscuit;</span>
+<span class="nc" id="L59">        this.ingredientsFrosting = ingredientsFrosting;</span>
+<span class="nc" id="L60">        this.instructionsBiscuit = instructionsBiscuit;</span>
+<span class="nc" id="L61">        this.instructionsFrosting = instructionsFrosting;</span>
+<span class="nc" id="L62">        this.id = id;</span>
+<span class="nc" id="L63">    }</span>
+    
+<span class="nc" id="L65">    public Recipes(String title, String[] ingredientsBiscuit, String[] ingredientsFrosting, String[] instructionsBiscuit, String[] instructionsFrosting, int id, int ranking) {</span>
+<span class="nc" id="L66">        this.title = title;</span>
+<span class="nc" id="L67">        this.ingredientsBiscuit = ingredientsBiscuit;</span>
+<span class="nc" id="L68">        this.ingredientsFrosting = ingredientsFrosting;</span>
+<span class="nc" id="L69">        this.instructionsBiscuit = instructionsBiscuit;</span>
+<span class="nc" id="L70">        this.instructionsFrosting = instructionsFrosting;</span>
+<span class="nc" id="L71">        this.id = id;</span>
+<span class="nc" id="L72">        this.ranking = ranking;</span>
+<span class="nc" id="L73">    }</span>
+
+<span class="nc" id="L75">    public Recipes(String title, String[] ingredientsBiscuit, String[] ingredientsFrosting, String[] ingredientExtra, String[] instructionsBiscuit, String[] instructionsFrosting, String[] insturctionsExtra, int id) {</span>
+<span class="nc" id="L76">        this.title = title;</span>
+<span class="nc" id="L77">        this.ingredientsBiscuit = ingredientsBiscuit;</span>
+<span class="nc" id="L78">        this.ingredientsFrosting = ingredientsFrosting;</span>
+<span class="nc" id="L79">        this.ingredientsExtra = ingredientExtra;</span>
+<span class="nc" id="L80">        this.instructionsBiscuit = instructionsBiscuit;</span>
+<span class="nc" id="L81">        this.instructionsFrosting = instructionsFrosting;</span>
+<span class="nc" id="L82">        this.instructionsExtra = insturctionsExtra;</span>
+<span class="nc" id="L83">        this.id = id;</span>
+<span class="nc" id="L84">    }</span>
+
+<span class="nc" id="L86">    public Recipes(String title, String[] ingredientsBiscuit, String[] ingredientsFrosting, String[] ingredientExtra, String[] instructionsBiscuit, String[] instructionsFrosting, String[] insturctionsExtra) {</span>
+<span class="nc" id="L87">        this.title = title;</span>
+<span class="nc" id="L88">        this.ingredientsBiscuit = ingredientsBiscuit;</span>
+<span class="nc" id="L89">        this.ingredientsFrosting = ingredientsFrosting;</span>
+<span class="nc" id="L90">        this.ingredientsExtra = ingredientExtra;</span>
+<span class="nc" id="L91">        this.instructionsBiscuit = instructionsBiscuit;</span>
+<span class="nc" id="L92">        this.instructionsFrosting = instructionsFrosting;</span>
+<span class="nc" id="L93">        this.instructionsExtra = insturctionsExtra;</span>
+<span class="nc" id="L94">    }</span>
+
+<span class="nc" id="L96">    public Recipes(String title, String[] ingredientsBiscuit, String[] ingredientsFrosting, String[] ingredientExtra, String[] instructionsBiscuit, String[] instructionsFrosting, int id, int ranking) {</span>
+<span class="nc" id="L97">        this.title = title;</span>
+<span class="nc" id="L98">        this.ingredientsBiscuit = ingredientsBiscuit;</span>
+<span class="nc" id="L99">        this.ingredientsFrosting = ingredientsFrosting;</span>
+<span class="nc" id="L100">        this.ingredientsExtra = ingredientExtra;</span>
+<span class="nc" id="L101">        this.instructionsBiscuit = instructionsBiscuit;</span>
+<span class="nc" id="L102">        this.instructionsFrosting = instructionsFrosting;</span>
+<span class="nc" id="L103">        this.id = id;</span>
+<span class="nc" id="L104">        this.ranking = ranking;</span>
+<span class="nc" id="L105">    }</span>
+
+<span class="nc" id="L107">    public Recipes(String title, String[] ingredientsBiscuit, String[] ingredientsFrosting, String[] instructionsBiscuit, String[] instructionsFrosting, int id, String urlImage, int ranking) {</span>
+<span class="nc" id="L108">        this.title = title;</span>
+<span class="nc" id="L109">        this.ingredientsBiscuit = ingredientsBiscuit;</span>
+<span class="nc" id="L110">        this.ingredientsFrosting = ingredientsFrosting;</span>
+<span class="nc" id="L111">        this.instructionsBiscuit = instructionsBiscuit;</span>
+<span class="nc" id="L112">        this.instructionsFrosting = instructionsFrosting;</span>
+<span class="nc" id="L113">        this.id = id;</span>
+<span class="nc" id="L114">        this.urlImage = urlImage;</span>
+<span class="nc" id="L115">        this.ranking = ranking;</span>
+<span class="nc" id="L116">    }</span>
+    
+    
+    
+
+
+	public String[] getIngredientsExtra() {
+<span class="nc" id="L123">		return ingredientsExtra;</span>
+	}
+
+	public void setIngredientsExtra(String[] ingredientsExtra) {
+<span class="nc" id="L127">		this.ingredientsExtra = ingredientsExtra;</span>
+<span class="nc" id="L128">	}</span>
+
+	public long getId() {
+<span class="nc" id="L131">		return id;</span>
+	}
+
+	public void setId(long id) {
+<span class="nc" id="L135">		this.id = id;</span>
+<span class="nc" id="L136">	}</span>
+
+	public double getRanking() {
+<span class="nc" id="L139">		return ranking;</span>
+	}
+
+	public void setRanking(long l) {
+<span class="nc" id="L143">		this.ranking = l;</span>
+<span class="nc" id="L144">	}</span>
+
+	public String[] getInstructionsExtra() {
+<span class="nc" id="L147">		return instructionsExtra;</span>
+	}
+
+	public void setInstructionsExtra(String[] instructionsExtra) {
+<span class="nc" id="L151">		this.instructionsExtra = instructionsExtra;</span>
+<span class="nc" id="L152">	}</span>
+
+	public String getUrlImage() {
+<span class="nc" id="L155">		return urlImage;</span>
+	}
+
+	public void setUrlImage(String urlImage) {
+<span class="nc" id="L159">		this.urlImage = urlImage;</span>
+<span class="nc" id="L160">	}</span>
+
+	public String getTitle() {
+<span class="nc" id="L163">        return title;</span>
+    }
+
+    public void setTitle(String title) {
+<span class="nc" id="L167">        this.title = title;</span>
+<span class="nc" id="L168">    }</span>
+
+    public String[] getIngredientsBiscuit() {
+<span class="nc" id="L171">        return ingredientsBiscuit;</span>
+    }
+
+    public void setIngredientsBiscuit(String[] ingredientsBiscuit) {
+<span class="nc" id="L175">        this.ingredientsBiscuit = ingredientsBiscuit;</span>
+<span class="nc" id="L176">    }</span>
+
+    public String[] getIngredientsFrosting() {
+<span class="nc" id="L179">        return ingredientsFrosting;</span>
+    }
+
+    public void setIngredientsFrosting(String[] ingredientsFrosting) {
+<span class="nc" id="L183">        this.ingredientsFrosting = ingredientsFrosting;</span>
+<span class="nc" id="L184">    }</span>
+
+    public String[] getIngredientExtra() {
+<span class="nc" id="L187">        return ingredientsExtra;</span>
+    }
+
+    public void setIngredientExtra(String[] ingredientExtra) {
+<span class="nc" id="L191">        this.ingredientsExtra = ingredientExtra;</span>
+<span class="nc" id="L192">    }</span>
+
+    public String[] getInstructionsBiscuit() {
+<span class="nc" id="L195">        return instructionsBiscuit;</span>
+    }
+
+    public void setInstructionsBiscuit(String[] instructionsBiscuit) {
+<span class="nc" id="L199">        this.instructionsBiscuit = instructionsBiscuit;</span>
+<span class="nc" id="L200">    }</span>
+
+    public String[] getInstructionsFrosting() {
+<span class="nc" id="L203">        return instructionsFrosting;</span>
+    }
+
+    public void setInstructionsFrosting(String[] instructionsFrosting) {
+<span class="nc" id="L207">        this.instructionsFrosting = instructionsFrosting;</span>
+<span class="nc" id="L208">    }</span>
+
+    public String[] getInsturctionsExtra() {
+<span class="nc" id="L211">        return instructionsExtra;</span>
+    }
+
+    public void setInsturctionsExtra(String[] insturctionsExtra) {
+<span class="nc" id="L215">        this.instructionsExtra = insturctionsExtra;</span>
+<span class="nc" id="L216">    }</span>
+
+
+
+    public void setId(int id) {
+<span class="nc" id="L221">        this.id = id;</span>
+<span class="nc" id="L222">    }</span>
+
+	public double getRanking_count() {
+<span class="nc" id="L225">		return ranking_count;</span>
+	}
+
+	public void setRanking_count(double ranking_count) {
+<span class="nc" id="L229">		this.ranking_count = ranking_count;</span>
+<span class="nc" id="L230">	}</span>
+    
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>
